@@ -11,6 +11,6 @@ public class q1 {
             if (i % 2 == 0)
                 count++;
         }
-        System.out.println("Number of even numbers = " + count);
+        System.out.println("Number of even numbers= " + count);
     }
 }
