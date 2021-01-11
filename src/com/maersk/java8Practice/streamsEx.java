@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Employee {
     long id;
@@ -19,16 +18,8 @@ class Employee {
         this.salary = salary;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public double getSalary() {
@@ -41,27 +32,23 @@ class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return " Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
                 "}\n";
     }
-
-
 }
 
 public class streamsEx {
-
-
     static double increment(double sal) {
 
         if (sal * 12 < 200000)
-            sal = sal + (.15 * 200000);
+            sal = sal + (.15 * sal);
 
         else
-            sal = sal + (.05 * 200000);
+            sal = sal + (.05 * sal);
 
         return sal;
     }
@@ -74,35 +61,31 @@ public class streamsEx {
                 new Employee(90, "Manali", 25, 20000));
 
 
-//        List<Double> filteredEmployees = employees
-//                .stream()
-//                .map((emp -> streamsEx.increment(emp.salary)))
-//                .collect(Collectors.toList());
+        List<Employee> ls = employees.stream().map(e -> {
+            double sal = streamsEx.increment(e.salary);
+            e.setSalary(sal);
+            return e;
+        }).collect(Collectors.toList());
 
-       List<Employee> ls=employees.stream().map(e->{
-           double sal=streamsEx.increment(e.salary);
-           e.setSalary(sal);
-           return e;
-       }).collect(Collectors.toList());
 
-       //map.values().stream()
-        //            .flatMap(m -> m.values().stream())
-        //            .forEach(l -> l.sort(cmp.thenComparing(cmp1)));
-
+        //sort based on names
         Comparator<Employee> compareByName = Comparator
                 .comparing(Employee::getName);
+
         List<Employee> sortedEmployees = employees.stream()
                 .sorted(compareByName)
                 .collect(Collectors.toList());
-        System.out.println("Based on Names : \n"+sortedEmployees);
+        System.out.println("Based on Names : \n" + sortedEmployees);
 
+        //sort based on incremented salary
         Comparator<Employee> compareBySalary = Comparator
                 .comparing(Employee::getSalary);
 
         List<Employee> sortedEmployees1 = employees.stream()
                 .sorted(compareBySalary)
                 .collect(Collectors.toList());
-        System.out.println("Based on Salary : \n"+sortedEmployees1);
+        System.out.println("Based on Salary : \n" + sortedEmployees1);
+
 
     }
 }
