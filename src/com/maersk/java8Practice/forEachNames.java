@@ -1,6 +1,7 @@
 package com.maersk.java8Practice;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,17 +20,17 @@ public class forEachNames {
         System.out.println("Before Sorting : ");
         names.forEach(value -> System.out.print(value + " "));
         System.out.println("\n");
-        String temp;
-
 
         //Sorting the names of list
         for (int i = 0; i < names.size(); i++) {
             for (int j = i + 1; j < names.size(); j++) {
                 String eli = names.get(i), elj = names.get(j);
                 if (eli.compareTo(elj) > 0) {
+                    //swap
                     String tmp = eli;
                     eli = elj;
                     elj = tmp;
+
                     names.set(i, eli);
                     names.set(j, elj);
                 }

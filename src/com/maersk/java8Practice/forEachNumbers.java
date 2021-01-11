@@ -35,6 +35,7 @@ public class forEachNumbers {
             }
         }
 
+
         //Printing the sorted elements
         System.out.println("After Sorting : ");
         list.forEach((Integer num) -> System.out.print(num + " "));
