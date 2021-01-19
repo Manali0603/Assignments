@@ -53,6 +53,7 @@ public class streamsEx {
                 new Employee(98, "Manali", 22, 15000),
                 new Employee(94, "Siri", 22, 15000));
 
+        //INCREMENTING THE SALARIES BASED ON ANNUAL SALARY
         Consumer<List<Employee>> empSalIncrement = list -> {
             for (int i = 0; i < employees.size(); i++) {
                 double sal = list.get(i).getSalary();
