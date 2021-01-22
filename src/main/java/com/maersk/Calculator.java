@@ -13,4 +13,8 @@ public class Calculator {
     {
         return Math.PI*r*r;
     }
+    public int multiply(int a,int b)
+    {
+        return a*b;
+    }
 }
