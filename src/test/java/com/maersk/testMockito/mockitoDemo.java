@@ -1,7 +1,5 @@
-package testMockito;
+package com.maersk.testMockito;
 
-import com.maersk.testMockito.ExternalService;
-import com.maersk.testMockito.MyService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,11 +46,13 @@ public class mockitoDemo {
         Assertions.assertThrows(RuntimeException.class, () -> myService.validate(null));
     }
 
-    //doretun and dothrow
+    //do-return and do-throw
     @Test
     void test4() {
-        Mockito.doReturn("abc").when(externalService.getValidation("abc"));
-        Mockito.doThrow(RuntimeException.class).when(externalService.getValidation(null));
+        //Mockito.doReturn("abc").when(externalService.getValidation("abc"));
+        Mockito.when(externalService.getValidation("abc")).thenReturn("abc");
+        Mockito.when(externalService.getValidation("null")).thenReturn("null");
+        //Mockito.doThrow(RuntimeException.class).when(externalService.getValidation(null));
     }
 
 }
