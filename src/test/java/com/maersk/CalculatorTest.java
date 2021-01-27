@@ -10,6 +10,8 @@ public class CalculatorTest {
     TestInfo testinfo;
     TestReporter testReporter;
 
+    //TestInfo is used to inject information about the current test or container into
+    // to @Test , @BeforeEach , @AfterEach , @BeforeAll , and @AfterAll methods.
     @BeforeEach
     void init(TestInfo testinfo, TestReporter testReporter) {
         this.testinfo = testinfo;
