@@ -16,11 +16,11 @@ public class callableExample {
         ExecutorService executor = Executors.newFixedThreadPool(1);
         Future<String> future = executor.submit(task);
 
-        System.out.println("future done? " + future.isDone());
+        System.out.println("future task done? " + future.isDone());
 
         String result = future.get();
 
-        System.out.println("future done? " + future.isDone());
+        System.out.println("future task done? " + future.isDone());
         System.out.print("result: " + result);
         executor.shutdown();
     }
