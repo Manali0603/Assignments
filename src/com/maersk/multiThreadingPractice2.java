@@ -2,7 +2,7 @@ package com.maersk;
 
 class RunnableDemo extends Thread {
     private Thread t;
-    private String threadName;
+    private final String threadName;
 
     RunnableDemo(String name) {
         threadName = name;

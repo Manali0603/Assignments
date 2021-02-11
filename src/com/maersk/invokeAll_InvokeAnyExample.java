@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class invokeAllExample {
+public class invokeAll_InvokeAnyExample {
 
     static Callable<String> callable(String result, long sleepSeconds) {
         return () -> {
