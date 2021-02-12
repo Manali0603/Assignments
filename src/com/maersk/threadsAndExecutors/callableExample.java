@@ -1,7 +1,7 @@
-package com.maersk;
+package com.maersk.threadsAndExecutors;
 
 import java.util.concurrent.*;
-
+//Callables are functional interfaces just like runnables but instead of being void they return a value.
 public class callableExample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Callable<String> task = () -> {

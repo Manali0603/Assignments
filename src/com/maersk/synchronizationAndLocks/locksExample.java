@@ -1,4 +1,4 @@
-package com.maersk;
+package com.maersk.synchronizationAndLocks;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -6,17 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class locksExample {
-    //    ReentrantLock lock = new ReentrantLock();
-//    int count = 0;
-//
-//    void increment() {
-//        lock.lock();
-//        try {
-//            count++;
-//        } finally {
-//            lock.unlock();
-//        }
-//    }
+
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         ReentrantLock lock = new ReentrantLock();

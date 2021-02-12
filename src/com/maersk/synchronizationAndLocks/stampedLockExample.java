@@ -1,4 +1,4 @@
-package com.maersk;
+package com.maersk.synchronizationAndLocks;
 
 import java.util.HashMap;
 import java.util.Map;

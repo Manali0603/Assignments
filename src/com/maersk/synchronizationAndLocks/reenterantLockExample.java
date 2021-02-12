@@ -1,4 +1,4 @@
-package com.maersk;
+package com.maersk.synchronizationAndLocks;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
